@@ -151,8 +151,8 @@ connection = Excon.new('http://geemus.com/', uri_parser: Addressable::URI)
 Compared to web browsers and other http client libraries, e.g. curl, Excon is a bit more low-level and doesn't assume much by default. If you are seeing different results compared to other clients, the following options might help:
 
 ```ruby
-# opt-in to omitting port from http:80 and https:443
-connection = Excon.new('http://geemus.com/', :omit_default_port => true)
+# opt-in to having Excon add a default port (http:80 and https:443)
+connection = Excon.new('http://geemus.com/', :include_default_port => true)
 
 # accept gzip encoding
 connection = Excon.new('http://geemus.com/', :headers => { "Accept" => "gzip" })
